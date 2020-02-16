@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="main">
+        <h1 *ngIf="items.length > 0 else elseBlock">Your cart has following items to checkout</h1>
+        <ng-template #elseBlock>
+            <h1>Nothing in your cart. <a routerLink="../products">Add some</a></h1>
+        </ng-template>
+        <ul>
+            <li *ngFor="let item of items">
+                <div>Name: {{item.name}}</div>
+                <div>Price: {{item.price}}</div>
+                <button (click)="removeFromCart(item)">Remove from cart</button>
+            </li>
+        </ul>
+    </div>
+</div>

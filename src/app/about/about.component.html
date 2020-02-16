@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="sidebar-left">
+        <div class="main">
+            <app-sidebar-left></app-sidebar-left>
+        </div>
+    </div>
+
+    <div class="body-main">
+        <div class="main">
+            <h1>About page</h1>
+            <div class="left">
+                <strong>Message:</strong>
+                <div class="message">
+                    <div *ngIf="!this.message.length else elseBlock1">no message received yet</div>
+                    <ng-template #elseBlock1>
+                        <div *ngFor="let message of this.message">{{message}}</div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="right">
+                <strong>Behavior message:</strong>
+                <div class="message">
+                    <div *ngIf="!this.messageBehavior.length else elseBlock2">no behavior message received yet</div>
+                    <ng-template #elseBlock2>
+                        <div *ngFor="let message of this.messageBehavior">{{message}}</div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-right">
+        <div class="main">
+            <app-sidebar-right></app-sidebar-right>
+        </div>
+    </div>
+</div>

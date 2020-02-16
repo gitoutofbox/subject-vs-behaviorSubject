@@ -1,0 +1,20 @@
+<h2>Left Sidebar</h2>
+<div class="left">
+    <strong>Message:</strong>
+    <div class="message">
+        <div *ngIf="!this.message.length else elseBlock1">no message received yet</div>
+        <ng-template #elseBlock1>
+            <div *ngFor="let message of this.message">{{message}}</div>
+        </ng-template>
+    </div>
+</div>
+
+<div class="right">
+    <strong>Behavior message:</strong>
+    <div class="message">
+        <div *ngIf="!this.messageBehavior.length else elseBlock2">no behavior message received yet</div>
+        <ng-template #elseBlock2>
+            <div *ngFor="let bmessage of this.messageBehavior">{{bmessage}}</div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+<div class="main">    <h1>Products</h1>
+<ul>
+    <li *ngFor="let item of list">
+        <div>Name: {{item.name}}</div>
+        <div>Price: {{item.price}}</div>
+        <button (click)="addToCart(item)">Add to cart</button>
+    </li>
+</ul>
+</div></div>
